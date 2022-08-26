@@ -1,0 +1,125 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="relative overflow-hidden" x-data="{open:false}">
+    <header class="relative">
+      <div class="bg-orange-100 pt-6">
+        <nav class="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6" aria-label="Global">
+          <div class="flex items-center flex-1">
+            <div class="flex items-center justify-between w-full md:w-auto">
+              <a href="#">
+                <span class="sr-only">Workflow</span>
+                <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="">
+              </a>
+              <div class="-mr-2 flex items-center md:hidden">
+                <button @click="open = !open" type="button" class="bg-orange-100 rounded-md p-2 inline-flex items-center justify-center text-indigo-400 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white" aria-expanded="false">
+                  <span class="sr-only">Open main menu</span>
+                  <!-- Heroicon name: outline/menu -->
+                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="hidden space-x-8 md:flex md:ml-10">
+              <a href="#process" class="text-base font-medium text-indigo-600 hover:text-gray-300">Our Process</a>
+  
+              <a href="#team" class="text-base font-medium text-indigo-600 hover:text-gray-300">Team</a>
+  
+              <a href="#" class="text-base font-medium text-indigo-600 hover:text-gray-300">Contact</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+  
+      <!--
+        Mobile menu, show/hide based on menu open state.
+  
+        Entering: "duration-150 ease-out"
+          From: "opacity-0 scale-95"
+          To: "opacity-100 scale-100"
+        Leaving: "duration-100 ease-in"
+          From: "opacity-100 scale-100"
+          To: "opacity-0 scale-95"
+      -->
+      <div class="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top md:hidden">
+        <div class="rounded-lg shadow-md bg-orange-100 ring-1 ring-black ring-opacity-5 overflow-hidden" x-show="open">
+          <div class="px-5 pt-4 flex items-center justify-between">
+            <div>
+              <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="">
+            </div>
+            <div class="-mr-2">
+              <button @click="open = !open" type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600">
+                <span class="sr-only">Close menu</span>
+                <!-- Heroicon name: outline/x -->
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="pt-5 pb-6">
+            <div class="px-2 space-y-1">
+              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">Our Process</a>
+  
+              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">About</a>
+  
+              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">Contact</a>
+            </div>
+            <div class="hidden mt-6 px-5">
+              <p class="text-center text-base font-medium text-gray-500">Existing customer? <a href="#" class="text-gray-900 hover:underline">Login</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  
+    <main>
+      <div class="bg-orange-100 flex flex-wrap">
+        <div class="w-5/6 lg:w-3/6 mx-auto">
+          <div class="lg:ml-36">
+            <div class="mt-10">
+              <div class="mx-auto sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
+                <div class="lg:py-24">
+                  <h1 class="mt-4 text-4xl tracking-tight font-extrabold text-red-400 sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
+                    <span class="block">A better way to</span>
+                    <span class="block text-indigo-400">find empolyees</span>
+                  </h1>
+                  <p class="mt-3 text-base text-gray-600 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">90% cheaper than traditional empolyee acquisition</p>
+                  <div class="mt-10 sm:mt-12">
+                    <form action="#" class="sm:max-w-xl sm:mx-auto lg:mx-0">
+                      <div class="sm:flex">
+                        <div class="min-w-0 flex-1">
+                          <label for="email" class="sr-only">Email address</label>
+                          <input id="emailMini" type="email" placeholder="Enter your email" class="block w-full px-4 py-3 rounded-md border-0 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 focus:ring-offset-gray-900">
+                        </div>
+                        <div class="mt-3 sm:mt-0 sm:ml-3">
+                          <button onclick="getMiniData()" type="submit" class="block w-full py-3 px-4 rounded-md shadow bg-indigo-500 text-white font-medium hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 focus:ring-offset-gray-900">Get more information</button>
+                        </div>
+                      </div>
+                      <p class="mt-3 text-sm  text-gray-600 sm:mt-4">All cantidates are screened and vetted by our team</p>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-3/6 hidden md:block">
+          <img class=" mx-auto mt-16 p-6 " src="/assets/hero.png" alt="">
+        </div>
+      </div>
+  
+      <!-- More main page content here... -->
+    </main>
+  </div>
+
+</body>
+</html>

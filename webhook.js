@@ -20,11 +20,13 @@ function getFormData() {
     phoneNumber: phoneNumber,
     comments: comments,
   }
+
+  console.log(obj);
   sendLead(obj);
 }
 
 function sendLead(obj) {
-  const url = 'https://hooks.slack.com/services/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';
+  const url = 'https://hooks.slack.com/services/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'
   const xhr = new XMLHttpRequest()
   let payload = {}
       payload.text = JSON.stringify(obj);
