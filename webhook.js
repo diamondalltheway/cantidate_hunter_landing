@@ -26,7 +26,8 @@ function getFormData() {
 }
 
 function sendLead(obj) {
-  const url = 'https://hooks.slack.com/services/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'
+  const key = 'Cbk67kbnNE09KpMn8ieNcUKL'
+  const url = `https://hooks.slack.com/services/T03QXDAKTQ9/B03UUT25M41/${key}`
   const xhr = new XMLHttpRequest()
   let payload = {}
       payload.text = JSON.stringify(obj);
